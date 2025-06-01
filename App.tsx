@@ -16,45 +16,46 @@ export default function App() {
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ScrollView contentContainerStyle={styles.container}>
         <Text style={styles.title}>Log in to Spotify</Text>
+        <View style={styles.wrapper}>
+          <View style={styles.socialButtonsContainer}>
+            <SocialLoginButton
+              iconName="google"
+              iconSet="FontAwesome5"
+              iconColor="#DB4437"
+              label="Continue with Google"
+            />
+            <SocialLoginButton
+              iconName="facebook-square"
+              iconSet="FontAwesome5"
+              iconColor="#3b5998"
+              label="Continue with Facebook"
+            />
+            <SocialLoginButton
+              iconName="apple"
+              iconColor="#fff"
+              label="Continue with Apple"
+            />
+            <SocialLoginButton
+              iconName="phone"
+              iconColor="#fff"
+              label="Continue with phone number"
+            />
+          </View>
 
-        <View style={styles.socialButtonsContainer}>
-          <SocialLoginButton
-            iconName="google"
-            iconSet="FontAwesome5"
-            iconColor="#DB4437"
-            label="Continue with Google"
-          />
-          <SocialLoginButton
-            iconName="facebook-square"
-            iconSet="FontAwesome5"
-            iconColor="#3b5998"
-            label="Continue with Facebook"
-          />
-          <SocialLoginButton
-            iconName="apple"
-            iconColor="#fff"
-            label="Continue with Apple"
-          />
-          <SocialLoginButton
-            iconName="phone"
-            iconColor="#fff"
-            label="Continue with phone number"
-          />
-        </View>
+          <View style={styles.divider} />
 
-        <View style={styles.divider} />
-
-        <View style={styles.form}>
-          <TextInputField
-            label="Email or username"
-            placeholder="Email or username"
-          />
-          <TextInputField
-            label="Password"
-            placeholder="Password"
-            secure
-            rightIcon={<Icon name="eye-slash" size={20} color="#888" />}
-          />
+          <View style={styles.form}>
+            <TextInputField
+              label="Email or username"
+              placeholder="Email or username"
+            />
+            <TextInputField
+              label="Password"
+              placeholder="Password"
+              secure
+              rightIcon={<Icon name="eye-slash" size={20} color="#888" />}
+            />
+          </View>
         </View>
       </ScrollView>
     </TouchableWithoutFeedback>
@@ -71,9 +72,13 @@ const styles = StyleSheet.create({
   title: {
     color: "#fff",
     fontWeight: "bold",
-    fontSize: 40,
+    fontSize: 44,
     marginBottom: 20,
     textAlign: "center",
+  },
+  wrapper: {
+    width: 320,
+    alignSelf: "center",
   },
   socialButtonsContainer: {
     marginBottom: 20,
