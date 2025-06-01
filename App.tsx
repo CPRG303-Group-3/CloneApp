@@ -6,12 +6,18 @@ import {
   ScrollView,
   TouchableWithoutFeedback,
   Keyboard,
+  TouchableOpacity,
+  Alert
 } from "react-native";
 import SocialLoginButton from "./components/SocialLoginButton";
 import TextInputField from "./components/TextInputField";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 export default function App() {
+  const handleLogin = () => {
+    Alert.alert("Assignment 1 Completed");
+  };
+
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <ScrollView contentContainerStyle={styles.container}>
@@ -55,6 +61,14 @@ export default function App() {
               secure
               rightIcon={<Icon name="eye-slash" size={20} color="#888" />}
             />
+
+            {/* ✅ Harsimar's Log In Button */}
+            <TouchableOpacity
+              style={styles.loginButton}
+              onPress={handleLogin}
+            >
+              <Text style={styles.loginButtonText}>Log In</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
@@ -93,5 +107,20 @@ const styles = StyleSheet.create({
     color: "#fff",
     marginLeft: 10,
     fontSize: 14,
+  },
+
+  // Harsimar's Styles
+  loginButton: {
+    backgroundColor: "#1DB954",
+    paddingVertical: 14,
+    borderRadius: 30,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 20,
+  },
+  loginButtonText: {
+    color: "#000",
+    fontWeight: "bold",
+    fontSize: 16,
   },
 });
