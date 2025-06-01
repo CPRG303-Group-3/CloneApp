@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontWeight: "bold",
     fontSize: 44,
-    marginBottom: 20,
+    marginBottom: 44,
     textAlign: "center",
   },
   wrapper: {
