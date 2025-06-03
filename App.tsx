@@ -8,7 +8,7 @@ import {
   Keyboard,
   TouchableOpacity,
   Alert,
-  Switch
+  Switch,
 } from "react-native";
 import SocialLoginButton from "./components/SocialLoginButton";
 import TextInputField from "./components/TextInputField";
@@ -52,7 +52,7 @@ export default function App() {
           </View>
 
           <View style={styles.divider} />
-          
+
           <View style={styles.form}>
             <TextInputField
               label="Email or username"
@@ -67,40 +67,40 @@ export default function App() {
           </View>
 
           <View style={styles.toggle}>
-            <Switch 
-              trackColor={{false:"white", true: "green"}}
+            <Switch
+              trackColor={{ false: "white", true: "#1DB954" }}
               thumbColor={"black"}
               value={isEnabled}
             />
-            <Text style={{color: "white"}}>Remember Me</Text>
+            <Text style={{ color: "white" }}>Remember Me</Text>
           </View>
 
           {/* ✅ Harsimar's Log In Button */}
-          <TouchableOpacity
-            style={styles.loginButton}
-            onPress={handleLogin}
-          >
+          <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
             <Text style={styles.loginButtonText}>Log In</Text>
           </TouchableOpacity>
 
-         
-
-          <View>
-            <Text 
-              style={styles.links && {textDecorationLine: "underline", color: "white"}}>
-                Forgot your password?
+          <View style={{ alignItems: "center", marginTop: 12 }}>
+            <Text
+              style={{
+                textDecorationLine: "underline",
+                color: "white",
+              }}
+            >
+              Forgot your password?
             </Text>
           </View>
-          
+
           <View style={styles.divider} />
 
-          <View>
-            <Text 
-              style={styles.links && {color: "grey"}}>
-                Don't have an account? <Text style={{color: "white", textDecorationLine: "underline"}}>Sign up for Spotify</Text>
+          <View style={{ alignItems: "center" }}>
+            <Text style={{ color: "grey" }}>
+              Don't have an account?{" "}
+              <Text style={{ color: "white", textDecorationLine: "underline" }}>
+                Sign up for Spotify
+              </Text>
             </Text>
           </View>
-
         </View>
       </ScrollView>
     </TouchableWithoutFeedback>
@@ -163,5 +163,5 @@ const styles = StyleSheet.create({
     paddingTop: 4,
     display: "flex",
     flexDirection: "row",
-  }
+  },
 });
