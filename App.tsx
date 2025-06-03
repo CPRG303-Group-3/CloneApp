@@ -7,7 +7,9 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   TouchableOpacity,
-  Alert
+  Alert,
+  Switch
+  Switch,
 } from "react-native";
 import SocialLoginButton from "./components/SocialLoginButton";
 import TextInputField from "./components/TextInputField";
@@ -17,6 +19,12 @@ export default function App() {
   const handleLogin = () => {
     Alert.alert("Assignment 1 Completed");
   };
+
+
+  const isEnabled = true;
+
+
+  const isEnabled = true;
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -61,15 +69,33 @@ export default function App() {
               secure
               rightIcon={<Icon name="eye-slash" size={20} color="#888" />}
             />
-
-            {/* ✅ Harsimar's Log In Button */}
-            <TouchableOpacity
-              style={styles.loginButton}
-              onPress={handleLogin}
-            >
-              <Text style={styles.loginButtonText}>Log In</Text>
-            </TouchableOpacity>
           </View>
+
+          <View style={styles.toggle}>
+            <Switch 
+              trackColor={{false:"white", true: "green"}}
+              thumbColor={"black"}
+              value={isEnabled}
+            />
+            <Text style={{color: "white"}}>Remember Me</Text>
+          </View>
+
+          <View>
+            <Text 
+              style={styles.links && {textDecorationLine: "underline", color: "white"}}>
+                Forgot your password?
+            </Text>
+          </View>
+          
+          <View style={styles.divider} />
+
+          <View>
+            <Text 
+              style={styles.links && {color: "grey"}}>
+                Don't have an account? <Text style={{color: "white", textDecorationLine: "underline"}}>Sign up for Spotify</Text>
+            </Text>
+          </View>
+
         </View>
       </ScrollView>
     </TouchableWithoutFeedback>
@@ -123,4 +149,22 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     fontSize: 16,
   },
+  toggle: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  links: {
+    display: "flex",
+    alignContent: "center"
+  }
+  toggle: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  links: {
+    display: "flex",
+    alignContent: "center"
+  }
 });
